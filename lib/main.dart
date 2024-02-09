@@ -4,7 +4,7 @@ void main() => runApp(MaterialApp(
   home: Home(),
 ));
 
-class  Home extends StatelessWidget {
+class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -13,20 +13,30 @@ class  Home extends StatelessWidget {
         centerTitle: true,
         backgroundColor: Colors.red[600],
       ),
-      body: const Center(
-        child: Icon(
-          Icons.airport_shuttle,
-          color: Colors.lightBlue,
-          size: 50.0,
-        ),
+      body: Center(
+        child: getElevatedButton()
       ),
-      floatingActionButton: FloatingActionButton(
+      floatingActionButton: getFloatingActionButton()
+    );
+  } 
+}
+
+ElevatedButton getElevatedButton() {
+  return ElevatedButton(
+          onPressed: foo, 
+          style: ElevatedButton.styleFrom(
+            backgroundColor: Colors.lightBlue,
+          ), 
+          child: const Text('Button')
+  );
+}
+
+FloatingActionButton getFloatingActionButton() {
+  return FloatingActionButton(
         onPressed: foo, 
         backgroundColor: Colors.red[600],
         child: const Text('clic'),
-      ),
-    );
-  } 
+      );
 }
 
 int foo() {
