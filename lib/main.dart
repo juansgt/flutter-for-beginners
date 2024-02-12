@@ -22,12 +22,15 @@ class Home extends StatelessWidget {
 }
 
 ElevatedButton getElevatedButton() {
-  return ElevatedButton(
-          onPressed: foo, 
+  return ElevatedButton.icon(
+          icon: const Icon(Icons.alternate_email),
+          onPressed: () {
+            print('You clicked me');
+          }, 
           style: ElevatedButton.styleFrom(
-            backgroundColor: Colors.lightBlue,
+            backgroundColor: Colors.amber,
           ), 
-          child: const Text('Button')
+          label: const Text('Email me'),
   );
 }
 
